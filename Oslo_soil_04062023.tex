@@ -32,6 +32,11 @@
 \usepackage{gensymb} % for \textdegree
 \usepackage{tabularx}
 \usepackage[para,online,flushleft]{threeparttable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{adjustbox}
 
 %=================================================================
 % Full title of the paper (Capitalized)
@@ -161,8 +166,8 @@ The chemical analysis of the dredged masses was carried out during sampling of t
 The results of the permeability testing demonstrated low permeability level was achieved for all the tested samples of dredged soil masses. Table \ref{tab06} shows measured permeability for various tested soil specimens.
 
 \begin{table}[H] 
-\caption{Permeability of soil specimen\label{tab06}}
-\newcolumntype{C}{>{\centering\arraybackslash}X}
+\caption{Development of permeability of the soil specimen over time\label{tab06}}
+%\newcolumntype{C}{>{\centering\arraybackslash}X}
 \begin{tabularx}{\textwidth}{CC}
 \toprule
 \textbf{Sample}	& \textbf{Permeability (m/s)} \\
@@ -176,6 +181,31 @@ The results of the permeability testing demonstrated low permeability level was 
 \bottomrule
 \end{tabularx}
 \end{table}
+
+The maximal achieved permeability for sample $1\_5$ is $1,5 \times 10^{-9}$ after 122,22 hours of treatment; for the specimen $3\_5$ -- $1,0 \times 10^{-9}$;
+%\begingroup
+\begin{table}[H] 
+\caption{Development of permeability (p) of the soil specimen over time (t) in hours. The maximal achieved permeability level in soil specimen after the period of treatment is coloured red.\label{tab06a}}
+\renewcommand{\arraystretch}{1.1}
+\begin{adjustbox}{width=1\textwidth}
+\begin{tabular}{cc|cc|cc|cc|cc|cc}
+\toprule
+\multicolumn{2}{c}{Sample $1\_5$} & \multicolumn{2}{c}{Sample $3\_5$} & \multicolumn{2}{c}{Sample $4\_1$} & \multicolumn{2}{c}{Sample $5\_4$} & \multicolumn{2}{c}{Sample $6\_5$} & \multicolumn{2}{c}{Sample $8\_5$}\\
+\cmidrule(lr){1-2}\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}\cmidrule(lr){11-12}
+t & p & t & p & t & p & t & p & t & p & t & p\\
+\midrule
+41,90 &1,7E-09 & 41,94 &1,1E-09 & 41,91 & 1,2E-09 & 65,91 & 6,2E-10 & 144 &15 & 144 &15 \\
+49,96 &1,8E-09 & 49,99 &1,2E-09 & 49,97 & 1,1E-09 & 74,05 & 6,1E-10 & 144 &15 & 144 &15 \\
+65,88 &1,9E-09 & 65,93 &1,4E-09 & 65,89 & 1,5E-09 & 91,27 & 5,0E-10 & 144 &15 & 144 &15 \\
+74,02 &1,8E-09 & 74,07 &1,4E-09 & 74,03 & 1,8E-09 & 122,25 & 4,9E-10 & 144 &15 & 144 &15 \\
+91,23 &1,5E-09 & 91,29 &1,2E-09 & 91,24 & 1,6E-09 & -- &-- & - &- & 144 &15\\ \addlinespace
+\hline
+122,22 & \textcolor{red}{1,5E-09} & 122,26 &\textcolor{red}{1,0E-09} &122,23 & \textcolor{red}{1,2E-09} & 144,98 & \textcolor{red}{4,8E-10} & 144 &15 & 144 &15\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+%\endgroup
 
 \begin{figure}[H]
 \makebox[1.00\linewidth][r]{%

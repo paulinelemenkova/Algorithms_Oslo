@@ -33,7 +33,7 @@
 \usepackage{tabularx}
 \usepackage[para,online,flushleft]{threeparttable}
 \usepackage{array}
-\usepackage{multirow}
+\usepackage{makecell, multirow}
 \usepackage{booktabs}
 \usepackage{caption}
 \usepackage{adjustbox}
@@ -188,7 +188,6 @@ The results of the permeability testing demonstrated low permeability level was 
 \caption{Permeability of soil in relation to the relationship between cement (c) and slag (s) for dredged masses from Östrand in Sundsvall. The best results with the lowest permeability of soil show the combination of binders for 30\% cement and 70\% slag. The abbreviation $H_WL_B$ stands for "high water -- low binder" level in a mixture.\label{fig08}}
 \end{figure}
 
-
 \begin{table}[H] 
 \caption{Development of permeability (p, m/s) of the soil specimen over time (t, hours). The maximal achieved permeability level in soil specimen after the period of treatment is coloured red.\label{tab06}}
 \renewcommand{\arraystretch}{1.1}
@@ -255,15 +254,18 @@ t & p & t & p & t & p & t & p & t & p & t & p\\
 
 \subsection{Concentrations of contaminants}
 
-The background (original) levels of the concentration of contaminants were evaluated and presented in Table \ref{tab01}. The evaluated included seven (7) types of heavy metals (mg/kg), total PAH-16 (mg/kg) and Tributyltin-Sn (TBT) ($\mu g Sn/kg$). The most important parameters in the context of soil contamination have been assessed for the following metals: Arsenic (As), lead (Pb), Cadmium (Cd), Chromium (Cr), Mercury (Hg), Nickel (Ni), Zinc (Zn), Table \ref{tab01}. The tests evaluating the concentrations of elements in soil samples were tested for the organic compounds -- 16 priority Polycyclic Aromatic Hydrocarbon (PAH) and organotin compounds Tributyltin (TBT), Table \ref{tab02}, and for organic chemicals Polychlorinated biphenyl (PCB) (7 pcs), Table \ref{tab03}.
+The background (original) levels of the concentration of contaminants were evaluated and presented in Table \ref{tab01}. The evaluated included seven (7) types of heavy metals (mg/kg), total PAH-16 (mg/kg) and Tributyltin-Sn (TBT) ($\mu g Sn/kg$), Table \ref{tab01}. The most important parameters in the context of soil contamination by heavy metals have been assessed for the following metal types: Arsenic (As), lead (Pb), Cadmium (Cd), Chromium (Cr), Mercury (Hg), Nickel (Ni), Zinc (Zn), Table \ref{tab01}. The tests also evaluating the concentrations of elements in soil samples were tested for the organic compounds -- 16 priority Polycyclic Aromatic Hydrocarbon (PAH) and organotin compounds Tributyltin (TBT), Table \ref{tab01}, and for organic chemicals Polychlorinated biphenyl (PCB) (7 pcs), Table \ref{tab03}.
 
 \begin{table}[H] 
+\setcellgapes{1pt}
+\makegapedcells
 \caption{Original level of contaminants: 7 types of heavy metals (mg/kg), total PAH-16 (mg/kg) and TBT ($\mu g Sn/kg$) collected in various Test Sites (TS) of Kongshavn.\label{tab01}}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 %\begin{tabularx}{\textwidth}{CCCCCCCC}
 \begin{tabularx}{\textwidth}{p{1.2cm} p{0.8cm} p{0.8cm} p{0.8cm}p{0.8cm}p{0.8cm}p{0.8cm}p{0.8cm}p{2.0cm}p{1.2cm}}
 \toprule
-\textbf{Test Site} & \textbf{As} & \textbf{Pb} & \textbf{Cd} & \textbf{Cr} & \textbf{Hg} & \textbf{Ni} & \textbf{Zn} & \textbf{Total PAH-16} & \textbf{TBT-Sn}\\
+\multirow{2}{*}{\textbf{Test Site}} & \multicolumn{7}{c}{\textbf{Heavy metals}} & \multirow{2}{*}{\textbf{Total PAH-16}} & \multirow{2}{*}{\textbf{TBT-Sn}}\\ \cline{2-8}
+& \textbf{As} & \textbf{Pb} & \textbf{Cd} & \textbf{Cr} & \textbf{Hg} & \textbf{Ni} & \textbf{Zn} & & \\
 \midrule
 	1-2 	& 13	& 47 & 0,5 & 47 & 0,365 & 41 & 200 & 9,4 & 37 \\
 	3-4 & 10	& 34 & 0,2 & 43 & 0,17 & 38 & 140 & 0,5 & 2,8 \\

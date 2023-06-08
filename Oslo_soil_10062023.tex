@@ -93,7 +93,7 @@ $^{3}$ \quad Laboratory of Image Synthesis and Analysis (LISA), École polytechn
 
 Soil treatment is a challenging civil engineering task with many applications, such as soil stabilization \cite{ref1,ma16113996,Lemenkova202305,app13084880}, soil washing and increasing soil permeability \cite{Rangeard,Lemenkova202222,Schultz}. All these tasks aim at improving geotechnical and environmental properties of soil prior of construction works. Thus, soil stabilization with various binder improves strength properties of foundations \cite{DHARINI2023,ELHARIRI202347,Lemenkova202210,ZHANG2023131887,Lemenkova202302}; soil washing removes pollutants and contaminants from soil through separating soil by particle size or leaching \cite{Fristad}. A popular approach to improving the environmental properties of soil is to remove the contaminants from the material using various washing solutions \cite{He,Mizutani2016}. Leaching is then performed by cleaning the soil from organic and inorganic contaminants that are bind to soil particles. The granulometric types of the soil affects the degree of soil contamination. Thus, soil with fine-grained texture (particle size of 0.002 to 0.6 mm) such as silt and clay retains more contaminants compared to middle-grained texture such as sand (particle size 0.6 to 2 mm) or coarse-grained such as gravel (over 2 mm of particle size) \cite{Binner}. 
 
-A key ingredient to effective soil processing is the development of the optimised design fit for experiments as reported in many similar studies \cite{Rahinah,Ninic,Lemenkova202226,Zhang,Lemenkova202309,Wei}. Methods of soil treatment differ depending on the soil type (fine-, middle- or coarse-grained) and properties (water content, density, temperature). Existing methods of soil washing used in environmental engineering include evaluation of leaching potential from soil. Diverse contaminants can be tested, such as heavy metals, (Arsenic (As), lead (Pb), Cadmium (Cd), Chromium (Cr), Mercury (Hg), Nickel (Ni), Zinc (Zn)), Polycyclic Aromatic Hydrocarbon (PAH), Polychlorinated biphenyl (PCB) and organotin compounds Tributyltin (TBT) \cite{Lemenkova202214,Lemenkova202131}. Depending to the approaches, soil leaching tests may be implemented with or without the renewed leachant \cite{1997579}. These approaches vary for dynamic or extraction tests \cite{Lemenkova202208}. 
+A key ingredient to effective soil processing is the development of the optimised design fit for experiments as reported in many similar studies \cite{Rahinah,Ninic,Lemenkova202226,Zhang,Lemenkova202309,Wei}. Methods of soil treatment differ depending on the soil type (fine-, middle- or coarse-grained) and properties (water content, density, temperature). Existing methods of soil washing used in environmental engineering include evaluation of leaching potential from soil. Diverse contaminants can be tested, such as heavy metals, (Arsenic (As), lead (Pb), Cadmium (Cd), Chromium (Cr), Mercury (Hg), Nickel (Ni), Zinc (Zn)\hl{, }Polycyclic Aromatic Hydrocarbon (PAH), Polychlorinated biphenyl (PCB) and organotin compounds Tributyltin (TBT) \cite{Lemenkova202214,Lemenkova202131}. Depending to the approaches, soil leaching tests may be implemented with or without the renewed leachant \cite{1997579}. These approaches vary for dynamic or extraction tests \cite{Lemenkova202208}. 
 
 The popular approaches of environmental engineering tests on soil properties include common leaching tests \cite{Chittoori,Beauchesne,Lemenkova202233}. More examples use water leach test \cite{Becker}, the toxicity characteristic leaching procedure \cite{Fuessle}, and the column leach test \cite{Dayioglu}, or soil layering over the substance drainage system \cite{Yu}. Existing methods follow the existing standards to make use of well known approaches in soil testing. Such traditional methods focus on remediation of ecologically degraded and contaminated soil assuming that soil properties conform to the modelled in existing workflow \cite{Alpaslan,ma16093444,su15064950}. As a consequence, none of the resulting approaches are tailored to understanding the variation of soil properties across different \emph{in-situ} conditions such as soil moisture and grain size across different soil specimens of the same class. at the same time, the selection of binder types and the proportion of water/binder ration significantly affect soil quality. 
 
@@ -105,27 +105,21 @@ In light of the above discussion, in this paper we study the benefits of exploit
 
 Our method is inspired by the optimization techniques of soil treatment \cite{Lindh2001,geotechnics2010005,RehmanMoghal,Yin,Kennedy} which factorise parameters that affect soil properties into sub-classes having linear and non-linear distribution of data over time for various soil samples. In short, we contribute to the geotechnical works through the evaluation of contaminant leaching from soil aimed at soil decontamination. The optimization of the procedure improved the workflow in small-scale prior using modelled several batches of soil samples prior to the upscaling in large-scale construction works. The data obtained from the numerical experiments on soil were processed by statistical methods and modelling algorithms demonstrating non-linear behaviour of leaching for various types of pollutants. Using this methodology, we illustrate the suitability of our approach to soil treatment in several graphical plots and tables where we compare the behaviour of soil leaching for various contaminants.We demonstrate the benefits of our approach over existing techniques on soil leaching tests and permeability.
 
-\subsection{Background and objectives}
-
-The laboratory experiments on soil quality were carried out at the Department of Building Materials at Lunds Tekniska Högskola LTH (Faculty of Engineering), Lund University. The tests were carried out at the Swedish Geotechnical Institute (SGI). The experiments were carried out for the Norconsult AS. The tests were tested for the research project run by SGI and financed by the Swedish Transport Administration. 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Materials}
+\section{\textcolor{blue}{Materials and Methods}}
 
 %----------- subsection ----------->
-\subsection{Soil sampling}
+\subsection{\textcolor{blue}{Sampling and transportation}}
 
-The soil samples included dredged materials collected from the test sites in Arendal municipality (southern Norway) and those from Kungshavn. The tests carried out in this research project included sampling of soil material and additionally, sampling of soil for further surface leaching. The soil and stabilizing agents were mixed during 5 minutes to achieve homogeneity of the material. Afterwards, the soil were moulded into the piston sampling sleeves. The piston sampling sleeves had an inner diameter of 50 mm and a height of 170 mm. The sampling procedure included 4 Batches. A large Batch 1 of samples is subdivided into the three more produced batches of soil samples (Batches 2, 3 and 4). Batch 2 contains activated carbon (powdered charcoal). Batch 3 was pre-treated with activated carbon one month before the stabilization process, and Batch 4 which was stabilized with Belite Calcium Sulfoaluminate (BCSA) cement. The BCSA cement was selected due to its properties: it is an environmentally-friendly type of cement with low $CO_2$ emissions.
+The laboratory experiments on soil quality were carried out at the Department of Building Materials at Lunds Tekniska Högskola LTH (Faculty of Engineering), Lund University. The tests were carried out at the Swedish Geotechnical Institute (SGI). The experiments were carried out for the Norconsult AS. The tests were tested for the research project run by SGI and financed by the Swedish Transport Administration. The soil samples included dredged materials collected from the test sites in Arendal municipality (southern Norway) and those from Kungshavn. The tests carried out in this research project included sampling of soil material and additionally, sampling of soil for further surface leaching. 
+
+The soil and stabilizing agents were mixed during 5 minutes to achieve homogeneity of the material. Afterwards, the soil were moulded into the piston sampling sleeves. The piston sampling sleeves had an inner diameter of 50 mm and a height of 170 mm. The sampling procedure included 4 Batches. A large Batch 1 of samples is subdivided into the three more produced batches of soil samples (Batches 2, 3 and 4). Batch 2 contains activated carbon (powdered charcoal). Batch 3 was pre-treated with activated carbon one month before the stabilization process, and Batch 4 which was stabilized with Belite Calcium Sulfoaluminate (BCSA) cement. The BCSA cement was selected due to its properties: it is an environmentally-friendly type of cement with low $CO_2$ emissions.
 
 %----------- subsection ----------->
-\section{Methods}
+\subsection{\textcolor{blue}{Soil stabilization}}
 
-%----------- subsection ----------->
-\subsection{Environmental engineering tests}
+The engineering tests testing environmental properties of soil consisted of \hl{soil stabilization}, permeability tests, surface leaching and shake table testing. The tests were carried out on the dredged material sampled by Norconsult. The samples were transported to Lund in containers marked with the respective test labels. Due to vibrations during transportation, there is always a certain separation in the material which lead to the damage of some of the containers and leakage of water. Therefore, the mud masses were then homogenized for each sample and placed in tight containers with screw lids, see Figure \ref{fig01}. The screw lids had a gasket to prevent leakage and evaporation.
 
-The engineering tests testing environmental properties of soil consisted of permeability tests, surface leaching and shake table testing. The tests were carried out on the dredged material sampled by Norconsult. The samples were transported to Lund in containers marked with the respective test labels. Due to vibrations during transportation, there is always a certain separation in the material which lead to the damage of some of the containers and leakage of water. Therefore, the mud masses were then homogenized for each sample and placed in tight containers with screw lids, see Figure \ref{fig01}. The screw lids had a gasket to prevent leakage and evaporation.
-
-\subsection{Soil stabilization}
 After the transfer of the samples in the containers, the dredged material was homogenised, and the water ratio and density were determined. The water ratio is the ratio of the amount of water to the mass of solid phase, i.e., soil. After that, the soil was stabilized using different combinations of binders. The choice of binder was based on previous experience from several similar projects in Sweden. In the mixing tests, a binder combination of 30\% CEM I (SS-EN 197-1) \cite{SIS2011} and 70\% slag (SS-EN 15167-1) \cite{SIS2006} was used. Furthermore, testing was carried out with different ratios of weight of water divided by weight of binder, water binder number (vbt). The choice of vbt was based on previous experiences, including from Arendal 2 in Gothenburg \cite{Lindh202139}.
 
 \begin{figure}[H]
@@ -141,7 +135,7 @@ After the transfer of the samples in the containers, the dredged material was ho
 
 After homogenisation and stabilisation of specimens, the permeability tests were performed to evaluate the flow of water through a soil sample. This is necessary to estimate soil suitability prior to construction works. The permeability tests were carried out by the SGI on specimens manufactured at LTH, i.e., specimens from the same series of samples tested for compressive strength after stabilization. The permeability test was carried out in a cell pressure permeameter according to method SGI No. 15. This method is used on both Arendal and Östrand. Additionally, shake table testing have been carried out by the Swedish Geotechnical Institute (SGI) in Linköping. However, this kind of tests is less suitable for the monolithic materials such as soil dredged masses.
 
-The objective of the tests on permeability is in sustainable stabilization of the dredged soil masses. The tests were performed at the SGI using standard permeameter device. The characteristics of the specimen tested for the permeability tests common for all the samples are as follows: sample diameter (mm) -- 50,0; Test temperature (C°) -- $20\pm 2$. The experiments are recorded in SGI under diary number 1.1-2107-0587. Sample preparation/compaction method included trimming the pieces of the specimen from the main stabilized sample. The individual characteristics of tested soil specimens are summarised in Table \ref{tab01}.
+The objective of the tests on permeability is in sustainable stabilization of the dredged soil masses. The tests were performed at the SGI using standard permeameter device. The characteristics of the specimen tested for the permeability tests common for all the samples are as follows: sample diameter (mm) -- 50\hl{.}0; Test temperature (C°) -- $20\pm 2$. The experiments are recorded in SGI under diary number 1.1-2107-0587. Sample preparation/compaction method included trimming the pieces of the specimen from the main stabilized sample. The individual characteristics of tested soil specimens are summarised in Table \ref{tab01}.
 
 \begin{table}[H] 
 \caption{Parameters of the six soil specimens tested for permeability using permeameter in SGI.\label{tab01}}
@@ -149,12 +143,12 @@ The objective of the tests on permeability is in sustainable stabilization of th
 \toprule
 \textbf{Sample ID} & \textbf{Sample water ratio (\%)} & \textbf{Bulk density $(t/m^3)$} & \textbf{Dry density $(t/m^3$)} \\
 \midrule
-$1\_5$ & 60,8 & 1,62 & 1,01 \\
-$4\_1$ & 75,3 & 1,49 & 0,85 \\
-$5\_4$ & 107 & 1,40 & 0,68 \\
-$3\_5$ & 63,5 & 1,62 & 0,99 \\
-$6\_5$ & 45,2 & 1,77 & 1,22 \\
-$8\_5$ & 45,5 & 1,72 & 1,18 \\
+$1\_5$ & 60\hl{.}8 & 1\hl{.}62 & 1\hl{.}01 \\
+$4\_1$ & 75\hl{.}3 & 1\hl{.}49 & 0\hl{.}85 \\
+$5\_4$ & 107 & 1\hl{.}40 & 0\hl{.}68 \\
+$3\_5$ & 63\hl{.}5 & 1\hl{.}62 & 0\hl{.}99 \\
+$6\_5$ & 45\hl{.}2 & 1\hl{.}77 & 1\hl{.}22 \\
+$8\_5$ & 45\hl{.}5 & 1\hl{.}72 & 1\hl{.}18 \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -184,7 +178,7 @@ In previous projects, Milli-Q water has been used, however, it results in biased
 
 \subsection{Soil permeability}
 
-The results of the permeability testing demonstrated low permeability level was achieved for all the tested samples of dredged soil masses. Figure \ref{fig03} shows the permeability of soil for different combinations of cement and slag. The best effect was obtained at a slag admixture of 70\% of the total amount of binder. Table \ref{tab02} shows measured permeability for various tested soil specimens. The maximal achieved permeability for sample $1\_5$ is $1,5 \times 10^{-9}$ after 122,22 hours of treatment; for the specimen $3\_5$ -- $1,0 \times 10^{-9}$; for the specimen $4\_1$ -- $1,2 \times 10^{-9}$; for the specimen $5\_4$ -- $4,8 \times 10^{-9}$; for the specimen $6\_5$ -- $3,0 \times 10^{-9}$, and for the specimen $8\_5$ -- $1,5 \times 10^{-9}$.
+The results of the permeability testing demonstrated low permeability level was achieved for all the tested samples of dredged soil masses. Figure \ref{fig03} shows the permeability of soil for different combinations of cement and slag. The best effect was obtained at a slag admixture of 70\% of the total amount of binder. Table \ref{tab02} shows measured permeability for various tested soil specimens. The maximal achieved permeability for sample $1\_5$ is $1,5 \times 10^{-9}$ after 122\hl{.}22 hours of treatment; for the specimen $3\_5$ -- $1,0 \times 10^{-9}$; for the specimen $4\_1$ -- $1,2 \times 10^{-9}$; for the specimen $5\_4$ -- $4,8 \times 10^{-9}$; for the specimen $6\_5$ -- $3,0 \times 10^{-9}$, and for the specimen $8\_5$ -- $1,5 \times 10^{-9}$.
 
 \begin{figure}[H]
 \begin{adjustwidth}{-\extralength}{0cm}
@@ -206,14 +200,14 @@ Figure \ref{fig05n} shows the permeability of soil samples changing over time of
 \cmidrule(lr){1-2}\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}\cmidrule(lr){11-12}
 t & p & t & p & t & p & t & p & t & p & t & p\\
 \midrule
-41,90 &1,7E-09 & 41,94 &1,1E-09 & 41,91 & 1,2E-09 & 65,91 & 6,2E-10 & 41,96 & 2,3E-09 & 17,98 & 1,2E-09 \\
-49,96 &1,8E-09 & 49,99 &1,2E-09 & 49,97 & 1,1E-09 & 74,05 & 6,1E-10 & 46,29 & 2,3E-09 & 26,02 & 1,2E-09 \\
-65,88 &1,9E-09 & 65,93 &1,4E-09 & 65,89 & 1,5E-09 & 91,27 & 5,0E-10 & 50,00 & 2,3E-09 & 41,96 & 1,7E-09 \\
-74,02 &1,8E-09 & 74,07 &1,4E-09 & 74,03 & 1,8E-09 & 122,25 & 4,9E-10 & 65,94 & 2,5E-09 & 50,11 & 1,9E-09 \\
-91,23 &1,5E-09 & 91,29 &1,2E-09 & 91,24 & 1,6E-09 & -- &-- & 74,09 & 2,9E-09 & 67,32 & 1,7E-09 \\
--- &-- & -- & -- & -- & -- & -- &-- & 91,31 & 3,0E-09 & -- & --\\ \addlinespace
+41\hl{.}90 &1\hl{.}7E-09 & 41\hl{.}94 &1\hl{.}1E-09 & 41\hl{.}91 & 1\hl{.}2E-09 & 65\hl{.}91 & 6\hl{.}2E-10 & 41\hl{.}96 & 2\hl{.}3E-09 & 17\hl{.}98 & 1\hl{.}2E-09 \\
+49\hl{.}96 &1\hl{.}8E-09 & 49\hl{.}99 &1\hl{.}2E-09 & 49\hl{.}97 & 1\hl{.}1E-09 & 74\hl{.}05 & 6\hl{.}1E-10 & 46\hl{.}29 & 2\hl{.}3E-09 & 26\hl{.}02 & 1\hl{.}2E-09 \\
+65\hl{.}88 &1\hl{.}9E-09 & 65\hl{.}93 &1\hl{.}4E-09 & 65\hl{.}89 & 1\hl{.}5E-09 & 91\hl{.}27 & 5\hl{.}0E-10 & 50\hl{.}00 & 2\hl{.}3E-09 & 41\hl{.}96 & 1\hl{.}7E-09 \\
+74\hl{.}02 &1\hl{.}8E-09 & 74\hl{.}07 &1\hl{.}4E-09 & 74\hl{.}03 & 1\hl{.}8E-09 & 122\hl{.}25 & 4\hl{.}9E-10 & 65\hl{.}94 & 2\hl{.}5E-09 & 50\hl{.}11 & 1\hl{.}9E-09 \\
+91\hl{.}23 &1\hl{.}5E-09 & 91\hl{.}29 &1\hl{.}2E-09 & 91\hl{.}24 & 1\hl{.}6E-09 & -- &-- & 74\hl{.}09 & 2\hl{.}9E-09 & 67\hl{.}32 & 1\hl{.}7E-09 \\
+-- &-- & -- & -- & -- & -- & -- &-- & 91\hl{.}31 & 3\hl{.}0E-09 & -- & --\\ \addlinespace
 \hline
-122,22 & \textbf{1,5E-09} & 122,26 & \textbf{1,0E-09} &122,23 & \textbf{1,2E-09} & 144,98 & \textbf{4,8E-10} & 122,27 & \textbf{3,0E-09} & 98,28 & \textbf{1,5E-09}\\
+122\hl{.}22 & \textbf{1\hl{.}5E-09} & 122\hl{.}26 & \textbf{1\hl{.}0E-09} &122\hl{.}23 & \textbf{1\hl{.}2E-09} & 144\hl{.}98 & \textbf{4\hl{.}8E-10} & 122\hl{.}27 & \textbf{3\hl{.}0E-09} & 98\hl{.}28 & \textbf{1\hl{.}5E-09}\\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
@@ -275,11 +269,11 @@ The background (original) levels of the concentration of contaminants were evalu
 \multirow{2}{*}{\textbf{Test Site}} & \multicolumn{7}{c}{\textbf{Heavy metals}} & \multirow{2}{*}{\textbf{Total PAH-16}} & \multirow{2}{*}{\textbf{TBT-Sn}}\\ \cline{2-8}
 & \textbf{As} & \textbf{Pb} & \textbf{Cd} & \textbf{Cr} & \textbf{Hg} & \textbf{Ni} & \textbf{Zn} & & \\
 \midrule
-	1-2 	& 13	& 47 & 0,5 & 47 & 0,365 & 41 & 200 & 9,4 & 37 \\
-	3-4 & 10	& 34 & 0,2 & 43 & 0,17 & 38 & 140 & 0,5 & 2,8 \\
-	5 &    9	& 38 & 0,32 & 45 & 0,174 & 30 & 140 & 0,94 & <2,0 \\
-	6 &   7,5	& 45 & 0,1 & 37 & 0,317 & 26 & 180 & 1,4 & 38 \\
-	8 &   13	& 100 & 0,86 & 52 & 0,574 & 50 & 350 & 8,1 & 5,9 \\
+	1-2 	& 13	& 47 & 0\hl{.}5 & 47 & 0\hl{.}365 & 41 & 200 & 9\hl{.}4 & 37 \\
+	3-4 & 10	& 34 & 0\hl{.}2 & 43 & 0\hl{.}17 & 38 & 140 & 0\hl{.}5 & 2\hl{.}8 \\
+	5 &    9	& 38 & 0\hl{.}32 & 45 & 0\hl{.}174 & 30 & 140 & 0\hl{.}94 & <2,0 \\
+	6 &   7\hl{.}5	& 45 & 0\hl{.}1 & 37 & 0\hl{.}317 & 26 & 180 & 1\hl{.}4 & 38 \\
+	8 &   13	& 100 & 0\hl{.}86 & 52 & 0\hl{.}574 & 50 & 350 & 8\hl{.}1 & 5\hl{.}9 \\
 \bottomrule
 \end{tabularx}
 \end{table}

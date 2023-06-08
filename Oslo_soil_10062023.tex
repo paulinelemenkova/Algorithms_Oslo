@@ -431,12 +431,12 @@ For evaluation of the obtained results, a comparison has been done between the r
 \toprule
 \textbf{Metal} & \textbf{$O\_P6$} & \textbf{$O\_P7$} & \textbf{$O\_P8A$} & \textbf{A $H_WL_B$ 23} & \textbf{A $H_WL_B$ 17} & \textbf{A $H_WL_B$ 18} & \textbf{T $H_WL_B$ 11} & \textbf{T $H_WL_B$ 09}\\
 \midrule
-As &  0,0807 & 0,0782 & 0,105 & 0,0276 & 0,0050 & <0,0014 & 0,0042 & 0,0090 \\
-Cd & <0,004 & <0,004 & <0,004 & 0,0025 & 0,00035 & <0,00028 & <0,0003 & <0,0003 \\
-Cr & <0,04 & <0,04 & <0,04 & 0,006 & 0,010 & 0,0091 & 0,0091 & 0,024 \\
-Hg & <0,002 & <0,002 & <0,002 & <0,0063 & <0,0070 & <0,0070 & <0,0076 & <0,0082 \\
-Ni & 0,272 & 0,411 & 0,4 & 0,52 & 1,1 & 0,14 & 0,46 & 0,69 \\
-Zn & <0,2 & <0,2 & <0,2 & <0,013 & <0,014 & <0,014 & <0,015 & <0,02 \\
+As &  0\hl{.}0807 & 0\hl{.}0782 & 0\hl{.}105 & 0\hl{.}0276 & 0\hl{.}0050 & <0\hl{.}0014 & 0\hl{.}0042 & 0\hl{.}0090 \\
+Cd & <0\hl{.}004 & <0\hl{.}004 & <0\hl{.}004 & 0\hl{.}0025 & 0\hl{.}00035 & <0\hl{.}00028 & <0\hl{.}0003 & <0\hl{.}0003 \\
+Cr & <0\hl{.}04 & <0\hl{.}04 & <0\hl{.}04 & 0\hl{.}006 & 0\hl{.}010 & 0\hl{.}0091 & 0\hl{.}0091 & 0\hl{.}024 \\
+Hg & <0\hl{.}002 & <0\hl{.}002 & <0\hl{.}002 & <0\hl{.}0063 & <0\hl{.}0070 & <0\hl{.}0070 & <0\hl{.}0076 & <0\hl{.}0082 \\
+Ni & 0\hl{.}272 & 0\hl{.}411 & 0\hl{.}4 & 0\hl{.}52 & 1\hl{.}1 & 0\hl{.}14 & 0\hl{.}46 & 0\hl{.}69 \\
+Zn & <0\hl{.}2 & <0\hl{.}2 & <0\hl{.}2 & <0\hl{.}013 & <0\hl{.}014 & <0\hl{.}014 & <0\hl{.}015 & <0\hl{.}02 \\
 TBT & 101E-6 & 103E-6 & 157E-6 & 275E-6 & 1180E-6 & 315E-6 & -- & -- \\
 \bottomrule
 \end{tabularx}
@@ -511,7 +511,49 @@ TBT & Tributyltin
 \appendix
 \section[\appendixname~\thesection]{}
 \subsection[\appendixname~\thesubsection]{}
-The appendix
+
+\begin{table}[H] 
+\begin{threeparttable}
+\centering
+\caption{Surface leaching of contaminants (heavy metals and PAH, $mg/m^2$) from soil during period of 64 days.\label{tabA01}}
+\small
+%\begin{tabularx*}{\linewidth}{@{\extracolsep{\fill}}p{0.8cm}p{1.0cm}p{1.0cm}p{1.0cm}p{1.6cm}p{1.6cm}p{1.6cm}p{1.6cm}p{1.6cm}}
+\setlength\tabcolsep{0pt}
+\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}} lcccccccc }
+\toprule
+\textbf{Period} & \textbf{6 hours } & \textbf{1 days} & \textbf{2.25 days} & \textbf{4 days} & \textbf{9 days} & \textbf{16 days} & \textbf{36 days} & \textbf{64 days} \\
+\midrule
+Sample No & 2317 & 2318 & 2319 & 2320 & 2321 & 2322 & 2323 & 2324  \\
+pH & 8.93 & 9.12 & 8.85 & 9.18 & 9.17 & 8.95 & 8.43 & 8.11  \\
+Conductivity & 2510 & 2500 & 2980 & 2760 & 2740 & 2750 & 2770 & 2750  \\
+Redox (mV) & 29 & 73 & 33 & 34 & 21 & 19 & 48 & 84  \\
+Al & 2.08 & 1.69 & 1.49 & 1.29 & 0.755 & 0.751 & 0.585 & 0.531  \\
+As & 0.0553 & 0.0736 & 0.084 & 0.0852 & 0.0807 & 0.35 & 0.0728 & 0.0669  \\
+Ba & 6.31 & 7.02 & 8.4 & 7.5 & 13.1 & 13.3 & 21.6 & 22  \\
+Ca & 15500 & 17000 & 19600 & 19300 & 24300 & 25300 & 34600 & 38200  \\
+Cd & <0.004 & <0.004 & <0.004 & <0.004 & <0.004 & <0.004 & <0.004 & <0.004  \\
+Co & 0.038 & 0.0306 & 0.0244 & 0.0202 & 0.0333 & 0.0244 & 0.0358 & 0.0508  \\
+Cr & <0.04 & <0.04 & <0.04 & <0.04 & <0.04 & <0.04 & <0.04 & <0.04  \\
+Cu & 1.58 & 1.03 & 0.744 & 0.532 & 0.653 & 0.5 & 0.86 & 0.634  \\
+Fe & 0.898 & 0.739 & 0.664 & 0.486 & <0.3 & <0.3 & <0.3 & <0.3  \\
+Hg & <0.002 & <0.002 & <0.002 & <0.002 & <0.002 & <0.002 & <0.002 & <0.002  \\
+
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+\bottomrule
+\end{tabularx}
+\begin{tablenotes}
+      \small
+      	\item \emph{Notations for Table A1 common for all the samples:}  Applied Methodology is based on standard SS-EN 15863:2015. Amount of leachate for all samples -- 1.50 l. Conductivity was measured in mS/m by temperature of sampling at 25°C. Period refers to the day of sampling. Surface: $0.0197 m^2$. Redox (mVolts) refers to oxidation (reduction) potential of solutions or chemical species to acquire / lose electrons and be reduced / oxidised. Leached amount/withdrawal is given in $mg/m^2$ for all the samples.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
 
 \begin{figure}[H]
 \begin{adjustwidth}{-\extralength}{0cm}

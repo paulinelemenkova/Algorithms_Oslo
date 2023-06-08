@@ -32,11 +32,13 @@
 \usepackage{gensymb} % for \textdegree
 \usepackage{tabularx}
 \usepackage[para,online,flushleft]{threeparttable}
+\usepackage{longtable,booktabs,threeparttablex}
 \usepackage{array}
 \usepackage{makecell, multirow}
 \usepackage{booktabs}
 \usepackage{caption}
 \usepackage{adjustbox}
+\usepackage{longtable}
 
 %=================================================================
 % Full title of the paper (Capitalized)
@@ -497,10 +499,20 @@ The following abbreviations are used in this manuscript:\\
 \noindent 
 \begin{tabular}{@{}ll}
 BCSA & Belite Calcium Sulfoaluminate \\
+\hl{DBT} & \hl{Dibutyltin} \\
+\hl{DBahA} & \hl{Dibenz(a,h)anthracene} \\
+\hl{DOT} & \hl{Dioctyltin} \\
+\hl{DPhT} & \hl{Diphenyltin} \\
+\hl{IP} & Indeno[1,2,3-cd]pyrene \\
+\hl{MBT} & \hl{Monobutyltin} \\
+\hl{MOT} & \hl{Monooctyltin} \\ 
+\hl{MPhT} & \hl{Monophenyltin} \\
 PAH & Polycyclic Aromatic Hydrocarbon \\
 PCB & Polychlorinated biphenyl \\
 SGI & Swedish Geotechnical Institute \\
-TBT & Tributyltin 
+TBT & Tributyltin \\
+\hl{TCyT} & \hl{Tricyclohexyltin} \\
+\hl{TTBT} & \hl{Tetrabutyltin} \\
 \end{tabular}
 }
 
@@ -512,17 +524,34 @@ TBT & Tributyltin
 \section[\appendixname~\thesection]{}
 \subsection[\appendixname~\thesubsection]{}
 
-\begin{table}[H] 
-\begin{threeparttable}
-\centering
-\caption{Surface leaching of contaminants (heavy metals and PAH, $mg/m^2$) from soil specimens during period of 64 days of sampling.\label{tabA01}}
-\small
-%\begin{tabularx*}{\linewidth}{@{\extracolsep{\fill}}p{0.8cm}p{1.0cm}p{1.0cm}p{1.0cm}p{1.6cm}p{1.6cm}p{1.6cm}p{1.6cm}p{1.6cm}}
-\setlength\tabcolsep{0pt}
-\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}} lcccccccc }
-\toprule
-\textbf{Period} & \textbf{6 hours } & \textbf{1 days} & \textbf{2.25 days} & \textbf{4 days} & \textbf{9 days} & \textbf{16 days} & \textbf{36 days} & \textbf{64 days} \\
-\midrule
+Notations for Table A1 common for all the samples:  Applied Methodology is based on standard SS-EN 15863:2015. Amount of leachate for all samples -- 1.50 l. Conductivity was measured in mS/m by temperature of sampling at 25°C. Period refers to the day of sampling. Surface: $0.0197 m^2$. Redox (mVolts) refers to oxidation (reduction) potential of solutions or chemical species to acquire / lose electrons and be reduced / oxidised. Leached amount/withdrawal is given in $mg/m^2$ for all the samples. Total carc. PAHs indicates total amount of carcinogenic PAHs. Abbreviations for organic compounds: BjF -- Benzo[j]fluoranthene; BkF -- Benzo[k]fluoranthene; Acy -- acenaphthylene; B[a]A -- Benz[a]anthracene; MBT -- Monobutyltin; DBT -- Dibutyltin; TBT -- Tributyltin; TTBT -- Tetrabutyltin; MOT -- Monooctyltin; DOT -- Dioctyltin; TCyT -- Tricyclohexyltin; MPhT -- Monophenyltin; DPhT -- Diphenyltin; IP -- Indeno[1,2,3-cd]pyrene; DBahA -- Dibenz(a,h)anthracene; 
+
+\begin{footnotesize}
+\begin{center}
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+%\begin{longtable}{|p{2.6cm}|cccccccc|}
+%\begin{longtable}{@{\extracolsep{\fill}}|p{2.6cm}|cccccccc|@{}}
+\begin{longtable}{@{\extracolsep{\fill}}|c|cccccccc|@{}}
+%\begin{table}[H] 
+%\begin{threeparttable}
+%\centering
+\caption{Surface leaching of contaminants (heavy metals and PAH, $mg/m^2$) from soil specimens during period of 64 days of sampling.} \label{tabA01}\\
+
+\hline \multicolumn{1}{|c|}{\textbf{Period}} & \multicolumn{1}{c|}{\textbf{6 hours}} & \multicolumn{1}{c|}{\textbf{1 days}} & \multicolumn{1}{c|}{\textbf{2.25 days}} & \multicolumn{1}{|c|}{\textbf{4 days}} & \multicolumn{1}{|c|}{\textbf{9 days}} & \multicolumn{1}{|c|}{\textbf{16 days}} & \multicolumn{1}{|c|}{\textbf{36 days}} & \multicolumn{1}{|c|}{\textbf{64 days}} \\ \hline 
+\endfirsthead
+
+\multicolumn{9}{c}%
+{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+\hline \multicolumn{1}{|c|}{\textbf{Period}} & \multicolumn{1}{c|}{\textbf{6 hours}} & \multicolumn{1}{c|}{\textbf{1 days}} & \multicolumn{1}{c|}{\textbf{2.25 days}} & \multicolumn{1}{|c|}{\textbf{4 days}} & \multicolumn{1}{|c|}{\textbf{9 days}} & \multicolumn{1}{|c|}{\textbf{16 days}} & \multicolumn{1}{|c|}{\textbf{36 days}} & \multicolumn{1}{|c|}{\textbf{64 days}} \\ \hline 
+\endhead
+
+\hline \multicolumn{9}{|r|}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+
 Sample No & 2317 & 2318 & 2319 & 2320 & 2321 & 2322 & 2323 & 2324  \\
 pH & 8.93 & 9.12 & 8.85 & 9.18 & 9.17 & 8.95 & 8.43 & 8.11  \\
 Conductivity & 2510 & 2500 & 2980 & 2760 & 2740 & 2750 & 2770 & 2750  \\
@@ -550,19 +579,53 @@ B & 140 & 142 & 157 & 145 & 126 & 126 & 101 & 101  \\
 Sb & 0.0467 & 0.0534 & 0.0496 & 0.0575 & 0.0822 & 0.0688 & 0.11 & 0.116  \\
 Se & <0.2 & <0.2 & <0.2 & <0.2 & <0.2 & 7.2 & <0.2 & <0.2  \\
 Naphthalene & <0.002 & <0.002 & <0.002 & <0.002 & <0.002 & <0.002 & <0.002 & <0.002 \\
-Acenaphthylene & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008  \\
+Acy & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008  \\
 Acenaphthene & <0,0008 & <0,0008 & <0,0008 & <0,0008 & 0.00099 & 0.00084 & <0,0008 & <0,0008  \\
 Fluorine & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008  \\
 Phenanthrene & <0.002 & <0.002 & <0.002 & <0.002 & <0.002 & <0.002 & <0.002 & <0.002  \\
 Anthracene & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008 & <0,0008  \\
-\bottomrule
-\end{tabularx}
-\begin{tablenotes}
-      \small
-      	\item \emph{Notations for Table A1 common for all the samples:}  Applied Methodology is based on standard SS-EN 15863:2015. Amount of leachate for all samples -- 1.50 l. Conductivity was measured in mS/m by temperature of sampling at 25°C. Period refers to the day of sampling. Surface: $0.0197 m^2$. Redox (mVolts) refers to oxidation (reduction) potential of solutions or chemical species to acquire / lose electrons and be reduced / oxidised. Leached amount/withdrawal is given in $mg/m^2$ for all the samples.
-    \end{tablenotes}
-  \end{threeparttable}
-\end{table}
+Fluoranthene & <0.0008 & <0.0008 & <0.0008 & <0.00084 & 0.002 & 0.0014 & 0.0019 & <0.0008  \\
+Pyrene & <0.0008 & 0,0013 & 0.002 & 0.0021 & 0.0037 & 0.004 & 0.0052 & 0.0028  \\
+B[a]A & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008  \\
+Chrysene & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008  \\
+BjF  & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008  \\
+BkF & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008  \\
+Benz(a)pyrene & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008  \\
+DBahA & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008  \\
+Benz(g,h,i)perylene & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008  \\
+IP & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008 & <0.0008  \\
+Total PAH 16 & <0.0072 & 0.0013 & 0.002 & 0.0029 & 0.0062 & 0.006 & 0.0071 & 0.0028  \\
+Total carc. PAHs & <0.0027 & <0.0027 & <0.0027 & <0.0027 & <0.0027 & <0.0027 & <0.0027 & <0.0027  \\
+Total other PAH & <0.005 & 0.0013 & 0.002 & 0.0029 & 0.0062 & 0.006 & 0.0071 & 0.0028  \\
+Total PAH L & <0.0019 & <0.0019 & <0.0019 & <0.0019 & 0.00099 & 0.00084 & <0.0019 & <0.0019  \\
+Total PAH M & <0.002 & 0.0013 & 0.002 & 0.0029 & 0.0052 & 0.0052 & 0.0071 & 0.0028  \\
+Total PAH H & <0.003 & <0.003 & <0.003 & <0.003 & <0.003 & <0.003 & <0.003 & <0.003  \\
+MBT & 0,000404 & 0,00326 & 0,00202 & 0,00223 & 0,00536 & 0,0055 & 0,0044 & 0,00711 \\
+DBT & <0,00008 & <0,00008 & <0,00008 & <0,00008 & 0.000142 & 0.000112 & 0.000153 & 0.00024 \\
+TBT & 0,0000807 & 0,0000951 & <0,00008 & 0,0000883 & 0,000101 & 0,000104 & 0,0000799 & 0,000133 \\
+TTBT & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 \\
+MOT & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 \\
+DOT & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 \\
+TCyT & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 \\
+MPhT &  <0,00008 &  <0,00008 &  <0,00008 &  <0,00008 &  <0,00008 &  <0,00008 &  <0,00008 &  <0,00008 \\
+DPhT & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008 & <0,00008  \\
+
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX & XXX  \\
+
+%
+
+\end{longtable}
+\end{center}
+\end{footnotesize}
 
 \begin{figure}[H]
 \begin{adjustwidth}{-\extralength}{0cm}

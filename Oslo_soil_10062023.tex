@@ -1,0 +1,632 @@
+%  LaTeX support: latex@mdpi.com 
+%  For support, please attach all files needed for compiling as well as the log file, and specify your operating system, LaTeX version, and LaTeX editor.
+
+%=================================================================
+\documentclass[algorithms,article,submit,pdftex,moreauthors]{Definitions/mdpi} 
+
+% MDPI internal commands
+\firstpage{1} 
+\makeatletter 
+\setcounter{page}{\@firstpage} 
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2023}
+\copyrightyear{2023}
+%\externaleditor{Academic Editor: Firstname Lastname}
+\datereceived{1 June 2023} 
+%\daterevised{} % Only for the journal Acoustics
+\dateaccepted{} 
+\datepublished{} 
+\hreflink{https://doi.org/} % If needed use \linebreak
+%\doinum{}
+
+%=================================================================
+% Add packages and commands here. The following packages are loaded in our class file: fontenc, inputenc, calc, indentfirst, fancyhdr, graphicx, epstopdf, lastpage, ifthen, lineno, float, amsmath, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, tabto, xcolor, soul, multirow, microtype, tikz, totcount, changepage, attrib, upgreek, cleveref, amsthm, hyphenat, natbib, hyperref, footmisc, url, geometry, newfloat, caption
+
+\graphicspath{{figures/}} % path to folder with figures
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{gensymb} % for \textdegree
+\usepackage{tabularx}
+\usepackage[para,online,flushleft]{threeparttable}
+\usepackage{array}
+\usepackage{makecell, multirow}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{adjustbox}
+
+%=================================================================
+% Full title of the paper (Capitalized)
+\Title{Optimized Workflow Framework in Construction Projects to Control the Environmental Properties of Soil}
+
+% MDPI internal command: Title for citation in the left column
+\TitleCitation{Optimized Workflow Framework in Construction Projects to Control the Environmental Properties of Soil}
+
+% Author Orchid ID: enter ID or remove command
+\newcommand{\orcidauthorA}{0000-0002-0577-9936} %  Per Add \orcidA{} behind the author's name
+\newcommand{\orcidauthorB}{0000-0002-5759-1089} % Polina Add \orcidB{} behind the author's name
+
+% Authors, for the paper (add full first names)
+\Author{Per Lindh $^{1}$,$^{2}$*\orcidA{} and Polina Lemenkova $^{3}$\orcidB{}}
+
+%\longauthorlist{yes}
+
+% MDPI internal command: Authors, for metadata in PDF
+\AuthorNames{Per Lindh and Polina Lemenkova}
+
+% MDPI internal command: Authors, for citation in the left column
+\AuthorCitation{Lindh, P.; Lemenkova, P.}
+% If this is a Chicago style journal: Lastname, Firstname, Firstname Lastname, and Firstname Lastname.
+
+% Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
+\address{%
+$^{1}$ \quad Department of Investments Technology and Environment, Swedish Transport Administration, Neptunigatan 52, Box 366, 201 23 Malmö, Sweden. Tel.: +46-0771-921-921. Email: per.lindh@trafikverket.se \\
+$^{2}$ \quad Division of Building Materials, Department of Building and Environmental Technology, Lunds Tekniska Högskola LTH (Faculty of Engineering), Lund University, Box 118, SE-221-00, Lund, Sweden. Email: per.lindh@byggtek.lth.se\\
+$^{3}$ \quad Laboratory of Image Synthesis and Analysis (LISA), École polytechnique de Bruxelles (Brussels Faculty of Engineering), Université Libre de Bruxelles (ULB). Building L, Campus de Solbosch, ULB -- LISA CP165/57, Avenue Franklin Roosevelt 50, Brussels 1000, Belgium. Email: polina.lemenkova@ulb.be
+}
+
+% Contact information of the corresponding author
+\corres{Correspondence: polina.lemenkova@ulb.be; Tel.: +32 471 86 04 59 (P.L.)}
+
+% Current address and/or shared authorship
+%\firstnote{Current address: Affiliation 3.} 
+
+% Abstract (Do not insert blank lines, i.e. \\) 
+\abstract{To optimize the workflow of civil engineering construction in a harbour, this paper developed a framework of the contaminant leaching assessment carried out on the stabilized/solidified dredged soil material. The specimens included sediments collected from the \emph{in situ} fieldwork in Arendal and Kungshavn. The background levels of the concentration of pollutants were evaluated to compare with cumulative surface leaching of substances from samples. The soil contamination was assessed using structured workflow scheme on the following elements: heavy metals -- As, Pb, Cd, Cr, Hg, Ni, Zn, organic compounds -- PAH-16, PCB and organotin compounds TBT. Numerical computation and data analysis methods were applied to geochemical testing creating computerised solutions to soil quality evaluation in civil engineering. Data modelling was performed to estimate leaching of contaminants within one year. The estimated leaching of As is $0.9153 mg/m^2$, for Ni - $2.8178 mg/m^2$, for total PAH-16 as $0.0507 mg/m^2$, and TBT -- $0.00061 mg/m^2$ per year. The performance of the sediments was examined with regard to permeability through a series of the controlled experiments. The environmental engineering tests were implemented in Swedish Geotechnical Institute (SGI) in a triplicate mode during 64 days. The results were compared for several sites and showed that the amount of As is slightly higher in Kungshavn than for Arendal, while the content of Cd, Cr and Ni is lower. For TBT, the levels are significantly lower than for those at Arendal. The algorithm of permeability tests evaluated the safety of foundation soil for construction of embankments and structures. The environmental engineering assessment methods were applied for monitoring coastal areas through evaluated permeability of soil and estimated leaching rates of heavy metals, PHB, PACs and TBT in selected test sites in harbours of southern Norway. 
+} 
+
+% Keywords
+\keyword{optimization; quality control; material science; chemical contamination; workflow; soil stabilisation; binders; solidification; leaching; decontamination} 
+
+% The fields PACS, MSC, and JEL may be left empty or commented out if not applicable
+\PACS{81.40.Cd; 81.40.Ef; 62.20.Qp; 83.50.Xa; 45.70.Mg; 92.40.Lg; 81.40.Lm; 62.20.M–}
+\MSC{76Axx; 74Exx; 74Fxx}
+\JEL{Q00; Q01; Q24; Q55; Q56}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\section{Introduction}
+
+Soil treatment is a challenging civil engineering task with many applications, such as soil stabilization \cite{ref1,ma16113996,Lemenkova202305,app13084880}, soil washing and increasing soil permeability \cite{Rangeard,Lemenkova202222,Schultz}. All these tasks aim at improving geotechnical and environmental properties of soil prior of construction works. Thus, soil stabilization with various binder improves strength properties of foundations \cite{DHARINI2023,ELHARIRI202347,Lemenkova202210,ZHANG2023131887,Lemenkova202302}; soil washing removes pollutants and contaminants from soil through separating soil by particle size or leaching \cite{Fristad}. A popular approach to improving the environmental properties of soil is to remove the contaminants from the material using various washing solutions \cite{He,Mizutani2016}. Leaching is then performed by cleaning the soil from organic and inorganic contaminants that are bind to soil particles. The granulometric types of the soil affects the degree of soil contamination. Thus, soil with fine-grained texture (particle size of 0.002 to 0.6 mm) such as silt and clay retains more contaminants compared to middle-grained texture such as sand (particle size 0.6 to 2 mm) or coarse-grained such as gravel (over 2 mm of particle size) \cite{Binner}. 
+
+A key ingredient to effective soil processing is the development of the optimised design fit for experiments as reported in many similar studies \cite{Rahinah,Ninic,Lemenkova202226,Zhang,Lemenkova202309,Wei}. Methods of soil treatment differ depending on the soil type (fine-, middle- or coarse-grained) and properties (water content, density, temperature). Existing methods of soil washing used in environmental engineering include evaluation of leaching potential from soil. Diverse contaminants can be tested, such as heavy metals, (Arsenic (As), lead (Pb), Cadmium (Cd), Chromium (Cr), Mercury (Hg), Nickel (Ni), Zinc (Zn)), Polycyclic Aromatic Hydrocarbon (PAH), Polychlorinated biphenyl (PCB) and organotin compounds Tributyltin (TBT) \cite{Lemenkova202214,Lemenkova202131}. Depending to the approaches, soil leaching tests may be implemented with or without the renewed leachant \cite{1997579}. These approaches vary for dynamic or extraction tests \cite{Lemenkova202208}. 
+
+The popular approaches of environmental engineering tests on soil properties include common leaching tests \cite{Chittoori,Beauchesne,Lemenkova202233}. More examples use water leach test \cite{Becker}, the toxicity characteristic leaching procedure \cite{Fuessle}, and the column leach test \cite{Dayioglu}, or soil layering over the substance drainage system \cite{Yu}. Existing methods follow the existing standards to make use of well known approaches in soil testing. Such traditional methods focus on remediation of ecologically degraded and contaminated soil assuming that soil properties conform to the modelled in existing workflow \cite{Alpaslan,ma16093444,su15064950}. As a consequence, none of the resulting approaches are tailored to understanding the variation of soil properties across different \emph{in-situ} conditions such as soil moisture and grain size across different soil specimens of the same class. at the same time, the selection of binder types and the proportion of water/binder ration significantly affect soil quality. 
+
+From a pure civil engineering perspective, it would seem more reasonable to model each soil sample as the superposition of factors that include binder proportions and water content, shared across all specimens of the same soil probe, and individual soil properties (density, moisture, grain size, type, texture, content of clay/sand, amount of organic matter). This representation would allow us to account for the differences between the distribution of the mentioned above parameters in the same class of soil samples. Furthermore, it would let us discard the non-linearity part of the soil modelling process when evaluating the relationship between soil texture and types of binders, which is irrelevant for chemical analysis of soil since it only carries information about a strength parameters, and focus on soil decontamination through the optimised workflow. 
+
+Modelling this information, as most dimensionality reduction methods do, only introduce additional parameters, and therefore, may complicate the performance of soil detoxification and removal of chemical pollutants. Workflow strategies of soil decontamination from pollutants, heavy metals, organic and inorganic toxins and organotin compounds have high costs \cite{Ghavami,Mishra,Lu}. The process of soil decontamination includes a complex chain of remediation techniques \cite{DU2014141}. Normally, this includes both \emph{in situ} (excavating the samples) and \emph{ex situ} (laboratory-based batch-wise treatment of specimens using percolating water) \cite{LU2023130021,CHEN2010638,KAVAMURA201061}. Given the expensive and time-consuming process of soil treatment in large-scale industry construction works, discussed earlier \cite{ChenLi,recycling1030328,Ahmed}, it becomes essential to optimise a workflow using computer-based modelling applied at small scale prior to workflow upscaling \cite{7733108}.  
+
+In light of the above discussion, in this paper we study the benefits of exploiting the effects of optimised binder proportions and water content on leaching and permeability of soil. The optimised workflow is proposed to achieve the most effective procedure and reduce high costs of soil processing in construction industry. The best combination of stabilizing agents for soil treatment ensures the control of the soil quality for environmental suitability of foundations before construction works in a harbour. To this end, we introduce a new method for improving the leaching efficiency by setting up an updated sampling procedure which included 4 Batches of specimens. Thus, we use the activated carbon (powdered charcoal) for pre-treatment of soil materials one month before the stabilization, and apply the Belite Calcium Sulfoaluminate (BCSA) type cement which has environmentally quality compared to the Portland cement due to low $CO_2$ emissions. the soil pre-treated with these materials demonstrated better environmental characteristics. 
+
+Our method is inspired by the optimization techniques of soil treatment \cite{Lindh2001,geotechnics2010005,RehmanMoghal,Yin,Kennedy} which factorise parameters that affect soil properties into sub-classes having linear and non-linear distribution of data over time for various soil samples. In short, we contribute to the geotechnical works through the evaluation of contaminant leaching from soil aimed at soil decontamination. The optimization of the procedure improved the workflow in small-scale prior using modelled several batches of soil samples prior to the upscaling in large-scale construction works. The data obtained from the numerical experiments on soil were processed by statistical methods and modelling algorithms demonstrating non-linear behaviour of leaching for various types of pollutants. Using this methodology, we illustrate the suitability of our approach to soil treatment in several graphical plots and tables where we compare the behaviour of soil leaching for various contaminants.We demonstrate the benefits of our approach over existing techniques on soil leaching tests and permeability.
+
+\subsection{Background and objectives}
+
+The laboratory experiments on soil quality were carried out at the Department of Building Materials at Lunds Tekniska Högskola LTH (Faculty of Engineering), Lund University. The tests were carried out at the Swedish Geotechnical Institute (SGI). The experiments were carried out for the Norconsult AS. The tests were tested for the research project run by SGI and financed by the Swedish Transport Administration. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Materials}
+
+%----------- subsection ----------->
+\subsection{Soil sampling}
+
+The soil samples included dredged materials collected from the test sites in Arendal municipality (southern Norway) and those from Kungshavn. The tests carried out in this research project included sampling of soil material and additionally, sampling of soil for further surface leaching. The soil and stabilizing agents were mixed during 5 minutes to achieve homogeneity of the material. Afterwards, the soil were moulded into the piston sampling sleeves. The piston sampling sleeves had an inner diameter of 50 mm and a height of 170 mm. The sampling procedure included 4 Batches. A large Batch 1 of samples is subdivided into the three more produced batches of soil samples (Batches 2, 3 and 4). Batch 2 contains activated carbon (powdered charcoal). Batch 3 was pre-treated with activated carbon one month before the stabilization process, and Batch 4 which was stabilized with Belite Calcium Sulfoaluminate (BCSA) cement. The BCSA cement was selected due to its properties: it is an environmentally-friendly type of cement with low $CO_2$ emissions.
+
+%----------- subsection ----------->
+\section{Methods}
+
+%----------- subsection ----------->
+\subsection{Environmental engineering tests}
+
+The engineering tests testing environmental properties of soil consisted of permeability tests, surface leaching and shake table testing. The tests were carried out on the dredged material sampled by Norconsult. The samples were transported to Lund in containers marked with the respective test labels. Due to vibrations during transportation, there is always a certain separation in the material which lead to the damage of some of the containers and leakage of water. Therefore, the mud masses were then homogenized for each sample and placed in tight containers with screw lids, see Figure \ref{fig01}. The screw lids had a gasket to prevent leakage and evaporation.
+
+\subsection{Soil stabilization}
+After the transfer of the samples in the containers, the dredged material was homogenised, and the water ratio and density were determined. The water ratio is the ratio of the amount of water to the mass of solid phase, i.e., soil. After that, the soil was stabilized using different combinations of binders. The choice of binder was based on previous experience from several similar projects in Sweden. In the mixing tests, a binder combination of 30\% CEM I (SS-EN 197-1) \cite{SIS2011} and 70\% slag (SS-EN 15167-1) \cite{SIS2006} was used. Furthermore, testing was carried out with different ratios of weight of water divided by weight of binder, water binder number (vbt). The choice of vbt was based on previous experiences, including from Arendal 2 in Gothenburg \cite{Lindh202139}.
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+\centering
+	\hspace{100pt}\includegraphics[width=8.0 cm]{Fig_01.jpg}
+\end{adjustwidth}
+\caption{Containers where the dredged masses were stored after transportation. Photo: Per Lindh. \label{fig01}}
+\end{figure}
+
+%----------- subsection ----------->
+\subsection{Permeability tests}
+
+After homogenisation and stabilisation of specimens, the permeability tests were performed to evaluate the flow of water through a soil sample. This is necessary to estimate soil suitability prior to construction works. The permeability tests were carried out by the SGI on specimens manufactured at LTH, i.e., specimens from the same series of samples tested for compressive strength after stabilization. The permeability test was carried out in a cell pressure permeameter according to method SGI No. 15. This method is used on both Arendal and Östrand. Additionally, shake table testing have been carried out by the Swedish Geotechnical Institute (SGI) in Linköping. However, this kind of tests is less suitable for the monolithic materials such as soil dredged masses.
+
+The objective of the tests on permeability is in sustainable stabilization of the dredged soil masses. The tests were performed at the SGI using standard permeameter device. The characteristics of the specimen tested for the permeability tests common for all the samples are as follows: sample diameter (mm) -- 50,0; Test temperature (C°) -- $20\pm 2$. The experiments are recorded in SGI under diary number 1.1-2107-0587. Sample preparation/compaction method included trimming the pieces of the specimen from the main stabilized sample. The individual characteristics of tested soil specimens are summarised in Table \ref{tab01}.
+
+\begin{table}[H] 
+\caption{Parameters of the six soil specimens tested for permeability using permeameter in SGI.\label{tab01}}
+\begin{tabularx}{\textwidth}{Cp{3.5cm}CC}
+\toprule
+\textbf{Sample ID} & \textbf{Sample water ratio (\%)} & \textbf{Bulk density $(t/m^3)$} & \textbf{Dry density $(t/m^3$)} \\
+\midrule
+$1\_5$ & 60,8 & 1,62 & 1,01 \\
+$4\_1$ & 75,3 & 1,49 & 0,85 \\
+$5\_4$ & 107 & 1,40 & 0,68 \\
+$3\_5$ & 63,5 & 1,62 & 0,99 \\
+$6\_5$ & 45,2 & 1,77 & 1,22 \\
+$8\_5$ & 45,5 & 1,72 & 1,18 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+%----------- subsection ----------->
+\subsection{Surface leaching tests}
+
+The surface leaching tests  have been carried out at Swedish Geotechnical Institute (SGI) in Linköping and the analysis of the leachate is carried out by ALS Scandinavia AB. The experiments were performed according to standard SS-EN 15863 \cite{SIS2015}, see Figure \ref{fig05n}.
+The tests entail that a stabilized test body with a known surface area is lowered into a water bath. The water is changed after 6h, 1d, 2.25d, 4d, 9d, 16d, 32d and 64d, see Table 20. At each water change, the leachate is analysed for heavy metals (As, Pb, Cd, Cr, Hg, Ni, Zn), PAHs (16 pcs), PCBs (7 pcs) and organotin compounds (TBT). 
+
+The surface leaching was performed as a triplicate test with specimens having designations within the test series. The samples were named Bach1, Sample 6, Sample 7 and Sample 8A. Three tested specimens were fabricated using dredged material collected from various test points. 
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_02.jpg}
+\end{adjustwidth}
+\caption{Process of surface leaching test on soil specimens. Photo source: Per Lindh. \label{fig05n}}
+\end{figure}
+
+The chemical analysis of the dredged masses was carried out during sampling of soil on leaching. The aim of the chemical analysis was to determine the background levels of the chemical elements (heavy metals, PAHs, PCB and TBT) and compare them to  level from leached from the tested soil masses. Besides, the test aimed to identify, which of the sample points within the sample area in the harbour was the most contaminated and therefore is would be used in surface leaching tests. In the surface leaching tests, some analyses gave lower values than the expected limits of contaminants, which is reported in the tests protocols. In such cases when the levels of pollutants are lower than the reported limits, it can be concluded that the leaching of the substance in question is low and the soil is environmentally safe.
+
+In previous projects, Milli-Q water has been used, however, it results in biased outcomes due to the content of extra pure water. Therefore, the later projects such as Arendal 2 and Östrand have been tested with the leachate from the respective local areas. In this study, the leachate from the Port of Oslo has been used. Based on the materials of the experiments, the sample point $1\_2$ was selected for surface leaching. In this method, the specimen is suspended in nylon ropes so that surface leaching can take place on the entire surface of the soil specimen. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results and Discussion}
+
+\subsection{Soil permeability}
+
+The results of the permeability testing demonstrated low permeability level was achieved for all the tested samples of dredged soil masses. Figure \ref{fig03} shows the permeability of soil for different combinations of cement and slag. The best effect was obtained at a slag admixture of 70\% of the total amount of binder. Table \ref{tab02} shows measured permeability for various tested soil specimens. The maximal achieved permeability for sample $1\_5$ is $1,5 \times 10^{-9}$ after 122,22 hours of treatment; for the specimen $3\_5$ -- $1,0 \times 10^{-9}$; for the specimen $4\_1$ -- $1,2 \times 10^{-9}$; for the specimen $5\_4$ -- $4,8 \times 10^{-9}$; for the specimen $6\_5$ -- $3,0 \times 10^{-9}$, and for the specimen $8\_5$ -- $1,5 \times 10^{-9}$.
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+\centering
+	\hspace{100pt}\includegraphics[width=10.0 cm]{Fig_03.jpg}
+\end{adjustwidth}
+\caption{Permeability of soil in relation to the relationship between cement (c) and slag (s) for dredged masses from Östrand in Sundsvall. The best results with the lowest permeability of soil show the combination of binders for 30\% cement and 70\% slag. The abbreviation $H_WL_B$ stands for "high water -- low binder" level in a mixture.\label{fig03}}
+\end{figure}
+
+Figure \ref{fig05n} shows the permeability of soil samples changing over time of the experiment in hours for selected specimens with indicated IDs. Here, the lines indicate the dynamics and overall trend in permeability with respect to the time of treatment of samples through stabilization/solidification procedure. The original values on permeability plotted on the graph show the variations in permeability with a general slight decrease in values which proves the effective technique of soil treatment through increased strength. 
+
+\begin{table}[H] 
+\caption{Development of permeability (p, m/s) of the soil specimen over time (t, hours). The maximal achieved permeability level in soil specimen after the period of treatment is coloured red.\label{tab02}}
+\renewcommand{\arraystretch}{1.1}
+\begin{adjustbox}{width=1\textwidth}
+\begin{tabular}{cc|cc|cc|cc|cc|cc}
+\toprule
+\multicolumn{2}{c}{Sample $1\_5$} & \multicolumn{2}{c}{Sample $3\_5$} & \multicolumn{2}{c}{Sample $4\_1$} & \multicolumn{2}{c}{Sample $5\_4$} & \multicolumn{2}{c}{Sample $6\_5$} & \multicolumn{2}{c}{Sample $8\_5$}\\
+\cmidrule(lr){1-2}\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}\cmidrule(lr){11-12}
+t & p & t & p & t & p & t & p & t & p & t & p\\
+\midrule
+41,90 &1,7E-09 & 41,94 &1,1E-09 & 41,91 & 1,2E-09 & 65,91 & 6,2E-10 & 41,96 & 2,3E-09 & 17,98 & 1,2E-09 \\
+49,96 &1,8E-09 & 49,99 &1,2E-09 & 49,97 & 1,1E-09 & 74,05 & 6,1E-10 & 46,29 & 2,3E-09 & 26,02 & 1,2E-09 \\
+65,88 &1,9E-09 & 65,93 &1,4E-09 & 65,89 & 1,5E-09 & 91,27 & 5,0E-10 & 50,00 & 2,3E-09 & 41,96 & 1,7E-09 \\
+74,02 &1,8E-09 & 74,07 &1,4E-09 & 74,03 & 1,8E-09 & 122,25 & 4,9E-10 & 65,94 & 2,5E-09 & 50,11 & 1,9E-09 \\
+91,23 &1,5E-09 & 91,29 &1,2E-09 & 91,24 & 1,6E-09 & -- &-- & 74,09 & 2,9E-09 & 67,32 & 1,7E-09 \\
+-- &-- & -- & -- & -- & -- & -- &-- & 91,31 & 3,0E-09 & -- & --\\ \addlinespace
+\hline
+122,22 & \textbf{1,5E-09} & 122,26 & \textbf{1,0E-09} &122,23 & \textbf{1,2E-09} & 144,98 & \textbf{4,8E-10} & 122,27 & \textbf{3,0E-09} & 98,28 & \textbf{1,5E-09}\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\begin{figure}[H]
+\makebox[1.00\linewidth][r]{%
+	\begin{subfigure}[b]{.50\textwidth}
+		\centering
+			\includegraphics[width=0.87\textwidth]{Fig_04a.jpg}
+		\caption{Specimen ID: $1\_5$}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.50\textwidth}
+		\centering
+		\includegraphics[width=0.87\textwidth]{Fig_04b.jpg}
+		\caption{Specimen ID: $4\_1$}
+	\end{subfigure}%
+}\\
+\vfill \vspace{1mm}
+\makebox[1.00\linewidth][r]{%
+	\begin{subfigure}[b]{.50\textwidth}
+	\centering
+		\includegraphics[width=0.87\textwidth]{Fig_04c.jpg}
+		\caption{Specimen ID: $5\_4$}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.50\textwidth}
+		\centering
+			\includegraphics[width=0.87\textwidth]{Fig_04d.jpg}
+		\caption{Specimen ID: $3\_5$}
+	\end{subfigure}%
+}\\
+\vfill \vspace{1mm}
+\makebox[1.00\linewidth][r]{%	
+	\begin{subfigure}[b]{.50\textwidth}
+		\centering
+		\includegraphics[width=0.87\textwidth]{Fig_04e.jpg}
+		\caption{Specimen ID: $6\_5$}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.50\textwidth}
+		\centering
+		\includegraphics[width=0.87\textwidth]{Fig_04f.jpg}
+		\caption{Specimen ID: $8\_5$}
+	\end{subfigure}%
+}\caption{Permeability of soil samples changing over time of experiment (in hours), Specimen IDs: (\textbf{a}) $1\_5$, (\textbf{b}) $4\_1$, (\textbf{c}) $5\_4$, (\textbf{d}) $3\_5$, (\textbf{e}) $6\_5$, (\textbf{f}) $8\_5$.}\label{fig05n}
+\end{figure}
+
+\subsection{Concentrations of contaminants}
+
+The background (original) levels of the concentration of contaminants were evaluated and presented in Table \ref{tab03}. Reading these data obtained from the leaching experiments include the analysis of information on amount and concentration of the resolved pollutants with respect to the overall amount of soil and thus to evaluate the obtained level of contamination to prevent ecological risks. The evaluated included seven (7) types of heavy metals (mg/kg), total PAH-16 (mg/kg) and Tributyltin-Sn (TBT) ($\mu g Sn/kg$), Table \ref{tab03}. The most important parameters in the context of soil contamination by heavy metals have been assessed for the following metal types: Arsenic (As), lead (Pb), Cadmium (Cd), Chromium (Cr), Mercury (Hg), Nickel (Ni), Zinc (Zn), Table \ref{tab03}. 
+
+\begin{table}[H] 
+\setcellgapes{1pt}
+\makegapedcells
+\caption{Original level of contaminants: 7 types of heavy metals (mg/kg), total PAH-16 (mg/kg) and TBT ($\mu g Sn/kg$) collected in various Test Sites (TS) of Kongshavn.\label{tab03}}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+%\begin{tabularx}{\textwidth}{CCCCCCCC}
+\begin{tabularx}{\textwidth}{p{1.2cm} p{0.8cm} p{0.8cm} p{0.8cm}p{0.8cm}p{0.8cm}p{0.8cm}p{0.8cm}p{2.0cm}p{1.2cm}}
+\toprule
+\multirow{2}{*}{\textbf{Test Site}} & \multicolumn{7}{c}{\textbf{Heavy metals}} & \multirow{2}{*}{\textbf{Total PAH-16}} & \multirow{2}{*}{\textbf{TBT-Sn}}\\ \cline{2-8}
+& \textbf{As} & \textbf{Pb} & \textbf{Cd} & \textbf{Cr} & \textbf{Hg} & \textbf{Ni} & \textbf{Zn} & & \\
+\midrule
+	1-2 	& 13	& 47 & 0,5 & 47 & 0,365 & 41 & 200 & 9,4 & 37 \\
+	3-4 & 10	& 34 & 0,2 & 43 & 0,17 & 38 & 140 & 0,5 & 2,8 \\
+	5 &    9	& 38 & 0,32 & 45 & 0,174 & 30 & 140 & 0,94 & <2,0 \\
+	6 &   7,5	& 45 & 0,1 & 37 & 0,317 & 26 & 180 & 1,4 & 38 \\
+	8 &   13	& 100 & 0,86 & 52 & 0,574 & 50 & 350 & 8,1 & 5,9 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The analysis of the original level of contaminants enabled to perform the evaluation of the decontamination of soil based on the discriminating actual values of pollutants against those of the original (background) level. In such a way, the degree of concentration of contaminants in soil samples was evaluated using analysis of leaching dynamics for each contaminant, respectively. The tests also evaluating the concentrations of elements in soil samples were tested for the organic compounds -- 16 priority Polycyclic Aromatic Hydrocarbon (PAH) and organotin compounds Tributyltin (TBT), Table \ref{tab03}, and for organic chemicals Polychlorinated biphenyl (PCB) (7 pcs), Table \ref{tab04}.
+
+\begin{table}[H] 
+\caption{Concentration level of origin for PCBs in Kongshavn test sites (TS) (mg/kg TS).\label{tab04}}
+\begin{tabularx}{\linewidth}{p{0.5cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.2cm}p{1.2cm}p{1.3cm}p{1.3cm}}
+\toprule
+\textbf{TS} & \textbf{PCB 28} & \textbf{PCB 52} & \textbf{PCB 101} & \textbf{PCB 118} & \textbf{PCB 153} & \textbf{PCB 138} & \textbf{PCB 180} & \textbf{$\sum$ 7 PCB}\\
+\midrule
+1-2 & 0,0054   & 0,019     & 0,014 	     & 0,0098  & 0,20        & 0,20       & 0,013         & 0,1 \\
+3-4 & <0,00050 & 0,00061 & < 0,00050    & < 0,00050 & 0,00063 & 0,00063 & < 0,00050 & 0,0019 \\
+5 & < 0,00053 & < 0,00053  & < 0,00053  & < 0,00053 & 0,0011   & 0,0011     & 0,00070     & 0,0029 \\
+6 & 0,0017   & 0,0059 	& 0,0026       & 0,0031  & 0,0033  & 0,0033      & 0,0022      & 0,022 \\
+8 & 0,0063   & 0,017 	& 0,015         & 0,012     & 0,012    & 0,012      & 0,0071      & 0,081\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The withdrawal of water for analysis of surface leaching was performed with the following intervals of time periods: after 6h of testing, 1d (24 h), 2,25days (54 hours), and then on days 4, 9, 16, 36 and 64. The repetitions of the tests arranged periodically with a nonlinear time gaps in the laboratory across the soil samples enable to indicate marks of leaching levels of contaminants separating the amounts of the leached substances from the soil samples. The analysis demonstrated the following leaching values ($mg/m^2$): the highest values of As reached 0.88 with average 0.71; the highest values of Ni reached 2.48 with average 2.20; the maximal leaching of PAH-16 is 0.053 with average 0.039; the leaching of TBT increased to 0.0010 with average of 0.0009. 
+
+In order to make a comparison of the contamination level in current state against the pre-industrial conditions, the deviation classification for heavy metals in sediments has been carried out according to the existing Swedish standards \cite{ZefferSamuelsson}. The table is recalculated using values from tables 34 and 36 in the Swedish Environmental Protection Agency's report 4914 (mg/kg TS). Thus, the identification of the high level marks in contamination enables to extract information on changes in pollution during the recording period, while the amplitude of contamination enables to evaluate the level of increase for each types of contaminant by heavy metals, TBT, PCB and PAH compared to the pre-industrial period with low pollution level in soil by Classes. Thus, the resulting data show that dredged soil masses collected from the Kungshavn tested areas are generally above Class 1 (Table \ref{tab05}). 
+
+The classes in deviation ranking of heavy metals are visually breaking the dataset into five clusters of data according to the value of pollution repetitively for each type of the analysed heavy metals, Table \ref{tab05}. The description of these values of contamination was stored and used for comparison of dynamics of the contaminants for diverse periods: days 1, 2,25, 4, 9, 16, 36 and 64. The full data presented in Appendix of this article included the records on the contamination level, the names of the contaminants and location of the sample sites. 
+
+\begin{table}[H] 
+\begin{threeparttable}
+\centering
+\caption{Deviation classification of heavy metals according to the Swedish standards (mg/kg TS).\label{tab05}}
+\begin{tabularx}{\textwidth}{CCCCCC}
+\toprule
+\textbf{Metal} & \textbf{Class 1} & \textbf{Class 2} & \textbf{Class 3} & \textbf{Class 4} & \textbf{Class 5}\\
+\midrule
+As & <10 & 10-17 & 17-28 & 28-45 & >45\\
+Cd & <0,2 & 1,2-0,5 & 0,5-1,2 & 1,2 & >3\\
+Cr & <40 & 40-48 & 48-60 & 60-72 & >72\\
+Cu & <15 & 15-30 & 30-49,5 & 49,5-79,5 & >79,5\\
+Hg & <0,04 & 0,04-0,12 & 0,12-0,4 & 0,4-1 & >1\\
+Ni & <30 & 30-45 & 46-66 & 66-99 & >99\\
+Pb & <25 & 25-40 & 40-65 & 65-110 & >110\\
+Zn & <85 & 85-127,5 & 127,5-204 & 204-357 & >357\\
+\bottomrule
+\end{tabularx}
+\begin{tablenotes}
+      \small
+      	\item \emph{Notations for Classes in Table 5:}  Class 1 -- No insignificant deviation from comparative values; Class 2 -- Small deviation the comparative value; Class 3 -- Clear deviation from comparative values; Class 4 -- Large deviation from comparative values; Class 5 -- Very large deviation from comparative values.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\subsection{}
+
+\subsection{Surface leaching}
+
+The tables summarising the analysis of the leachate are presented in the Appendix. Table \ref{tab06} shows the distribution of values above or below the reporting limit for metals summarised in the additional Tables of Appendix.
+
+\begin{table}[H] 
+\begin{threeparttable}
+\centering
+\caption{Values of concentrations of leaching contaminants ($mg/m^2$) from soil samples: above or below the reported limits.\label{tab06}}
+\begin{tabularx}{\textwidth}{CCCCCCCC}
+\toprule
+\textbf{Sample} & \textbf{As} & \textbf{Pb} & \textbf{Cd} & \textbf{Cr} & \textbf{Hg} & \textbf{Ni} & \textbf{Zn} \\
+\midrule
+B 1, S-6 & above & below & below & below & below & above & both \\
+B 1, S-7 & above & below & below & below & below & above & below \\
+B 1, S-8A & above & below & below & below & below & above & both \\
+\bottomrule
+\end{tabularx}
+\begin{tablenotes}
+      \small
+      	\item \emph{Notations for abbreviations in Table 7:}  B1 -- Batch 1; S6 -- Sample 6; S7 -- Sample 7; S-8A -- Sample 8A; As -- Arsenic; Pb -- Lead; Cd -- Cadmium; Cr -- Chromium; Hg -- Mercury; Ni -- Nickel; Zn -- Zinc. 
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+Among the analysed heavy metals, Arsenic (As) and Nickel (Ni) are above the detection limit for the entire time series of sampled specimens treated during the period from 6 hours to 64 days of leaching. Figure \ref{fig05} shows the accumulated leaching of arsenic against time. As the leaching for arsenic can be considered as diffusion controlled, the leaching is plotted against the time, see Figure \ref{fig05}. The lines on the graphs were plotted and interpolated as several short segments of splines, separated by the Batches and Samples ('Prov') between each measurement and compared for average values, logarithm curve and standard deviation. The interpretation of the lines on the graph showing the contamination level is made using modelling software, which plotted the curvatures using the distinct colours of lines for each Batch for separability of evaluated specimens. Thus, the graph also shows the standard deviation between the samples within the same time gap. 
+
+The standard deviation for the three samples is reported with a red line. On day 16, the standard deviation of values of leached As from the soil samples was significantly higher, which is well seen, e.g., in sample 6. It may indicate a biased measurement in the laboratory on a given specific sample. Nevertheless, for the analysis of leaching the data remain statistical unbiased, and the result has been included in the calculation of the amount of arsenic (As) leached from the soil masses. The average value of the three samples is used to visualise a statistical trend line. The equation from the trend line is then used to calculate the expected leaching of As after one year. 
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_05.jpg}
+\end{adjustwidth}
+\caption{Cumuative leaching of arsenic (As) against time in tested specimen samples.\label{fig05}}
+\end{figure}
+
+Since recent decades included intensive manufacturing and industrial development in the region of Kungshavn (Port of Oslo) with many lands degraded and soil contaminated. Therefore, the need for remediation of soil requires a comparison of data on contamination level both retrospective and as a prognosis. Therefore, the prognosis of the possible contamination by selected pollutants has been done for Arsenic (As), Nickel (Ni), PAH-16 and TBT. Thus, using the regression equation from Figure \ref{fig05} and a time period of 365 days (one year), we modelled the potential leaching amount per $m^2$ as showed in Equation \ref{eq01}. This gives an estimated leaching of Arsenic (As) of $0.9153 mg/m^2$ per year.
+
+\begin{equation}\label{eq01}
+	y= 0.128 \ln(time) + 0.161
+\end{equation}
+
+For Nickel (Ni), the leaching results look similar and in the same way as for Arsenic (As). Likewise as in case for Arsenic (As), the regression equation was used from Figure \ref{fig07} and modelled the data using the time span of 365 days to evaluate possible  leaching of Ni per $m^2$ during one year, in accordance with the Equation \ref{eq02}. The computed equation gives an estimated amount of leaching of nickel as $2.8178 mg/m^2$ per year.
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_06.jpg}
+\end{adjustwidth}
+\caption{Cumulative leaching of nickel (Ni) against time in tested soil specimens.\label{fig06}}
+\end{figure}
+
+\begin{equation}\label{eq02}
+	y= 0.3522 \ln(time) + 0.7399
+\end{equation}
+
+Figure \ref{fig06} shows a cumulative leaching of nickel (Ni) over time. The average value of the three samples is used to plot a statistical trend line showing general development. The equation from the trend line is used to calculate the expected leaching of Ni after one year. By moving along the path of the lines on the plot continuously, the overall trend in the increase of leaching of Ni is interpolated. A series of these lines forms a trend of Ni leaching based on the evaluated  data from Batch 1: Samples 6, 7 and 8A, respectively.
+
+Figure \ref{fig07} shows a graph of the cumulative leaching of PAH-16 in soil samples over time. Here, the results vary a little between sample 8A and samples 6 and 7. However, the standard deviation between those samples is low. The average value of the three samples is used to visualise a statistical trend line. The equation from the trend line is then used to calculate the expected leaching of PAH-16 after one year (365 days) in $m^2$, in accordance with Equation \ref{eq03}. This gives an estimated value of possible leaching of total PAH-16 as $0.0507 mg/m^2$ from the soil in Kungshaven per calendar year.
+
+\begin{equation}\label{eq03}
+	y= 0.0074 \ln(time) + 0.0071
+\end{equation}
+
+Regarding the actual content of the PAH-16 substance, the results of the detection considered statistical analysis. The detection limit was determined as three times the standard deviation (Figure \ref{fig07}) obtained when evaluating soil samples. The dynamics of the leaching of the PAH-16 substances was detected based on frequent measurements as regular samplings of the soil, represented on the lines of the graphs as dots encountered once for the period of measurements on each line segment. The lowest concentration level of PAH-16 was determined as limit of quantification, that is, quantitatively assessed with satisfactory certainty. The location of sampling marks was identified within the plot for analysis of PAH-16 leaching. It is determined as 10 times the standard deviation for specimens and is thus roughly 3 times higher than the detected limits of PAH-16 presented in soil specimens. 
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_07.jpg}
+\end{adjustwidth}
+\caption{Cumulative leaching of PAH-16 in tested soil samples.\label{fig07}}
+\end{figure}
+
+Each sampling case represents a central point of the line in a given transect. The overall trend of leaching is increasing with regard to the line path, i.e., the total amount of contaminant is gradually released from the specimens along with soil treatment. This proves a positive effect of solidification and stabilization of soil on the removal of contaminants from soil. As the values for leached amount of PCBs are lower than the reporting limit, which is positive, no results can be calculated for PCB. Figure \ref{fig08} reports a graph of the cumulative leaching of organotin compound tributyltin (TBT) over time. Using the regression equation from Figure \ref{fig08} extrapolated for a time period 365 days, the leaching of TBT per $m^2$ was modelled for a year, according to Equation \ref{eq04}. The obtained results give an estimated amount of leaching of TBT of $0.00061 mg/m^2$ per year.
+
+\begin{equation}\label{eq04}
+	y= 0.0001 \ln(time) + 0.0002
+\end{equation}
+
+The average value of the three samples is used to draw a statistical trend line. The equation from the trend line is then used to calculate the expected leaching of TBT after one (1) year. The reporting limit specified for the TBT is standard for the respective concentration parameter following the methodology. The variations in the concentration of TBT can be affected by, e.g., dilution due to matrix disturbances, limited sample quantity or low dry matter content. The detection limit of chemical elements follow the analysis method to evaluate the lowest concentration at which contaminants are detected, i.e., where it is determined that the substance is present in a soil sample. 
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_08.jpg}
+\end{adjustwidth}
+\caption{Developed leaching of TBT from the soil samples over time.\label{fig08}}
+\end{figure}
+
+For evaluation of the obtained results, a comparison has been done between the results for surface leaching received in present study against those from other studies. Table \ref{tab07} summarises the values of leaching recorded in samples from Oslo (O), Arendal (A) and Timrå (T). The results are based on the measurements performed after 9 days of soil testing, and show surface leaching of contaminants (heavy metals and TBT, $mg/m^2$) from soil after 9 days of testing, Table \ref{tab07}. The reporting limits of contaminant concentration of TBT and heavy metals with regard to the content of binder (water/binder ratio) were evaluated in soil samples as a collective designation for the highest levels of the substances in the samples and compared for various test locations, Table \ref{tab07}. The analysis of Table \ref{tab07} indicates that the amount of As is slightly higher in Kungshavn Port of Oslo (O)than for Arendal (A) and Timrå (T). However, the content of Cd, Cr and Ni is lower. 
+
+\begin{table}[H] 
+\begin{threeparttable}
+\centering
+\caption{Surface leaching of contaminants (heavy metals and TBT, $mg/m^2$) from soil after 9 days.\label{tab07}}
+\small
+%\begin{tabularx*}{\linewidth}{@{\extracolsep{\fill}}p{0.8cm}p{1.0cm}p{1.0cm}p{1.0cm}p{1.6cm}p{1.6cm}p{1.6cm}p{1.6cm}p{1.6cm}}
+\setlength\tabcolsep{0pt}
+\begin{tabularx}{\textwidth}{@{\extracolsep{\fill}} ccccccccc }
+\toprule
+\textbf{Metal} & \textbf{$O\_P6$} & \textbf{$O\_P7$} & \textbf{$O\_P8A$} & \textbf{A $H_WL_B$ 23} & \textbf{A $H_WL_B$ 17} & \textbf{A $H_WL_B$ 18} & \textbf{T $H_WL_B$ 11} & \textbf{T $H_WL_B$ 09}\\
+\midrule
+As &  0,0807 & 0,0782 & 0,105 & 0,0276 & 0,0050 & <0,0014 & 0,0042 & 0,0090 \\
+Cd & <0,004 & <0,004 & <0,004 & 0,0025 & 0,00035 & <0,00028 & <0,0003 & <0,0003 \\
+Cr & <0,04 & <0,04 & <0,04 & 0,006 & 0,010 & 0,0091 & 0,0091 & 0,024 \\
+Hg & <0,002 & <0,002 & <0,002 & <0,0063 & <0,0070 & <0,0070 & <0,0076 & <0,0082 \\
+Ni & 0,272 & 0,411 & 0,4 & 0,52 & 1,1 & 0,14 & 0,46 & 0,69 \\
+Zn & <0,2 & <0,2 & <0,2 & <0,013 & <0,014 & <0,014 & <0,015 & <0,02 \\
+TBT & 101E-6 & 103E-6 & 157E-6 & 275E-6 & 1180E-6 & 315E-6 & -- & -- \\
+\bottomrule
+\end{tabularx}
+\begin{tablenotes}
+      \small
+      	\item \emph{Notations for Table 8:}  $H_WL_B$ indicate a "high water / low binder" ratio in a mixture. The abbreviations indicate the locations where measurements were performed: Oslo (O), Arendal (A) and Timrå (T). 
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+As for TBT, the levels are significantly lower in Oslo than for the corresponding sample at Arendal. The TBT was not analyzed in the Timrå project, and therefore, can only be compared between the Oslo and Arendal. The reporting limit for for contaminants was determined as a quantification limit of 7 types of heavy metals, PAH-16, TBT and PCB. Thus, the goal of this study was to apply the optimised approach to evaluate and report concentration values in the polluting substances detected in various soil samples. The specimens were treated using geotechnical engineering tests and then evaluated using quantitative methods of the statistical analysis. The comparison of the leaching levels was performed using measured levels over various periods of time as cumulative leaching.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+
+We have proposed an approach to leaching experiments on soil for physical decontamination from heavy metals and chemical PAH, PCB and TBT that relies on extracting the soil samples and processing them as geotechnical tests. To this end, we have introduced the optimised methods of soil testing that allow modelling non-linear behaviour of leaching from soil and comparison of various soil samples treated using various combination of binders. The presented workflow of soil treatment enabled to process samples of soil specimens and evaluate the dynamics of leaching and permeability over time of soil treatment, extracts data for computer-assisted plotting and statistical analysis, find valid/invalid samples through the analysis standard deviation, detect the trends in values of contamination over time and compare the detected values against the original (background) levels of contaminants in soil samples collected from Kungshavn, Port of Oslo, southern Norawy. 
+
+In this study, we proposed an optimised framework developed for environmental engineering tests focused on evaluating properyies of soil which included the following workflow steps, described below as a summary: 
+
+\begin{itemize}
+	\item The soil samples were collected from the Kungshavn Harbour, Port of Oslo; The representative soil specimens were excavated from different locations (test sites) and placed in containers the further soil treating in batchwise mode; 
+	\item The soil was homogenised using a surface mixer and stabilised with various combination of binders (cement/slag). The soil samples were cropped and trimmed in leach piles to a defined height of specimen to minimise the workflow: unnecessary parts were subtracted from the samples using piles; 
+	\item Analyses of the permeability of soil was done using permeameter device according to method SGI No. 15, and compared with optimal parameters for several specimens; the temperature and humidity conditions were maintained in the laboratory.
+	\item The immobilization of contaminants was performed through leaching of the environmentally critical pollutants: 7 types of heavy metals, PAH, PCB, and TNT. The dynamics of leaching speed and value was detected with the labelling of soil leaching over defined time intervals. 
+	\item The obtained data were recorded for statistical analysis and computer-based modelling. The discrimination of levels of contaminants in soil specimens were randomly coloured on the graphs for a better visual contrast. The behaviour of soil was evaluated using intervals through repetitive soil sampling in laboratory SGI; 
+	\item Correcting outliers in cases of biased samples were detected and discussed on the dataset of evaluated soil samples; 
+	\item The prognosis of behaviour of the pollutants was numerically modelled using the developed equations and statistical data analysis. The comparison of the achieved levels of pollution and leached contaminants were compared on the original (backgroun) level to show the dynamics in leaching.  
+\end{itemize}
+
+The presented scheme of the workflow enabled to perform accurate decontamination and remediation of soil based on the proposed integrated approaches of \emph{in-situ} soil sampling and statistical data analysis. Soil contamination is a significant environmental problem that includes  threats to human health and environmental sustainability. At the same time, large construction projects increase the contamination through related industrial activities. Therefore, our project contributed to establish the links between the construction engineering and environmental monitoring.
+
+Using the optimised techniques, we tested different experimental conditions, as follows: in separated batches of soil, we used different ratios of binders (cement/slag), different ratio of water amount to binder amount, and water binder number (vbt). Furthermore, we have performed numerical experiments and statistical data processing to derive average and standard deviation various on the measured data. Our experiments have shown the importance of exploiting variations in soil properties for diverse binder combinations tested by BCSA cement and slag in various combinations, as well as the benefits of accounting for the non-linearity of the permeability properties with regard to binder content used for stabilization of the soil material. We tested the permeability and leaching of soil data on six cases to achieve a statistical soundness of the results. 
+
+As a result of the implemented framework, soil specimens were processed, stabilized, solidified and decontaminated. Such a workflow presents a model for further processing of large quantities of soil material in harbours and marine ports. Furthermore, for environmental purposes, an extrapolation of the data was presented for estimation of possible dynamics during one calendar year of the pollutants using statistical approach. The visualised examples of the behaviour of soil properties are presented as several graphs and tables with provided detailed comments and formulae used for numerical modelling.
+
+Optimization of workflow is a crucial issue in such projects as harbour construction and large-scale civil engineering works. A current limitation of our project is its use of dredged sediments collected from the harbour which has major shortcomings, since sampling marine sediments decreases the availability of suitable disposal specimens and increases transportation and storage costs, while soil processing for industrial projects involves a lengthy, costly and difficult process and high capital costs. Therefore, as a continuation of this work, we intend to study the use of more sophisticated measures of soil properties collected at different depths. We also plan to investigate how statistical methods could be exploited to model soil collected in large quantities (hundreds of tons) for optimization of large-scale industrial projects such a harbour construction. 
+
+As a recommendation for future similar works where large quantity of soil (hundreds of tons) should be processed for industrial construction purposes and the workflow requires optimization, a pilot project should be always carried out to ensure optimization of soil experiments in large volume before the series of tests. Second, when comparing laboratory tests and pilot scale, the temperature of the dredged soil masses should be taken into account as the temperature plays a role in the development of soil strength. Moreover, to control soil properties, temperature measurements should be included at different depths. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\authorcontributions{Supervision, conceptualization, methodology, visualization, software, resources, data curation, formal analysis, validation, funding acquisition and project administration, P.L. (Per Lindh); writing---original draft preparation, methodology, software, formal analysis, writing---review and editing, and investigation, P.L (Polina Lemenkova). All authors have read and agreed to the published version of the manuscript.}
+
+\funding{The publication was funded by the Editorial Office of Algorithms, Multidisciplinary Digital Publishing Institute (MDPI), by providing 100\% discount for the APC of this manuscript. }
+
+\institutionalreview{Not applicable.}
+
+\informedconsent{Not applicable.}
+
+\dataavailability{Not applicable} 
+
+\acknowledgments{The authors thank the reviewers for reading, suggestions and comments that improved an earlier version of this manuscript.}
+
+\conflictsofinterest{The authors declare no conflict of interest.} 
+
+\abbreviations{Abbreviations}{
+The following abbreviations are used in this manuscript:\\
+
+\noindent 
+\begin{tabular}{@{}ll}
+BCSA & Belite Calcium Sulfoaluminate \\
+PAH & Polycyclic Aromatic Hydrocarbon \\
+PCB & Polychlorinated biphenyl \\
+SGI & Swedish Geotechnical Institute \\
+TBT & Tributyltin 
+\end{tabular}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optional
+\appendixtitles{no} % Leave argument "no" if all appendix headings stay EMPTY (then no dot is printed after "Appendix A"). If the appendix sections contain a heading then change the argument to "yes".
+\appendixstart
+\appendix
+\section[\appendixname~\thesection]{}
+\subsection[\appendixname~\thesubsection]{}
+The appendix
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_A1.jpg}
+\end{adjustwidth}
+\caption{Leaching of contaminant from soil samples: sustainable stabilization of dredged soil. \label{figA1}}
+\end{figure}
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_A1a.jpg}
+\end{adjustwidth}
+\caption{Leaching of contaminant from soil samples: sustainable stabilization of dredged soil. \label{figA1}}
+\end{figure}
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_A2.jpg}
+\end{adjustwidth}
+\caption{Leaching of contaminant from soil samples: sustainable stabilization of dredged soil. \label{figA1}}
+\end{figure}
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_A2a.jpg}
+\end{adjustwidth}
+\caption{Leaching of contaminant from soil samples: sustainable stabilization of dredged soil. \label{figA1}}
+\end{figure}
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_A3.jpg}
+\end{adjustwidth}
+\caption{Leaching of contaminant from soil samples: sustainable stabilization of dredged soil. \label{figA1}}
+\end{figure}
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_A3a.jpg}
+\end{adjustwidth}
+\caption{Leaching of contaminant from soil samples: sustainable stabilization of dredged soil. \label{figA1}}
+\end{figure}
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_A4.jpg}
+\end{adjustwidth}
+\caption{Leaching of contaminant from soil samples: sustainable stabilization of dredged soil. \label{figA1}}
+\end{figure}
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_A4a.jpg}
+\end{adjustwidth}
+\caption{Leaching of contaminant from soil samples: sustainable stabilization of dredged soil. \label{figA1}}
+\end{figure}
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_A5.jpg}
+\end{adjustwidth}
+\caption{Leaching of contaminant from soil samples: sustainable stabilization of dredged soil. \label{figA1}}
+\end{figure}
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_A5a.jpg}
+\end{adjustwidth}
+\caption{Leaching of contaminant from soil samples: sustainable stabilization of dredged soil. \label{figA1}}
+\end{figure}
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_A6.jpg}
+\end{adjustwidth}
+\caption{Leaching of contaminant from soil samples: sustainable stabilization of dredged soil. \label{figA1}}
+\end{figure}
+
+\begin{figure}[H]
+\begin{adjustwidth}{-\extralength}{0cm}
+%\centering
+	\hspace{130pt}\includegraphics[width=14.0 cm]{Fig_A6a.jpg}
+\end{adjustwidth}
+\caption{Leaching of contaminant from soil samples: sustainable stabilization of dredged soil. \label{figA1}}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{adjustwidth}{-\extralength}{0cm}
+%\printendnotes[custom] % Un-comment to print a list of endnotes
+
+\reftitle{References}
+
+%=====================================
+% References, variant A: external bibliography
+%=====================================
+\bibliography{Oslo.bib}
+%\nocite{*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{adjustwidth}
+\end{document}
